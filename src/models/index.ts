@@ -39,7 +39,7 @@ function initDb(config: any) {
       )
     })
     .forEach(function(file) {
-      const model = require(path.join(__dirname, file))(
+      const model = require(path.join(__dirname, file)).default(
         sequelize,
         sequelize.DataTypes
       )
